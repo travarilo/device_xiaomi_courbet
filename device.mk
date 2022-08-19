@@ -24,6 +24,10 @@ PRODUCT_COPY_FILES += \
 # Blur
 TARGET_ENABLE_BLUR := true
 
+# Camera
+PRODUCT_PACKAGES += \
+    libpiex_shim
+
 # Display
  PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/display/qdcm_calib_data_xiaomi_42_02_0b_mp_cmd_mode_dsc_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_42_02_0b_mp_cmd_mode_dsc_dsi_panel.xml \
