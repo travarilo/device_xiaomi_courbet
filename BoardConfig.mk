@@ -22,6 +22,10 @@ TARGET_PROVIDES_AUDIO_EXTNS := true
 # Compression
 PRODUCT_FS_COMPRESSION := 1
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_courbet
+TARGET_RECOVERY_DEVICE_MODULES := libinit_courbet
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 ODM_MANIFEST_SKUS += courbet
