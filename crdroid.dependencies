@@ -20,7 +20,7 @@
   {
     "repository": "crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-playground",
     "target_path": "prebuilts/clang/host/linux-x86/clang-playground",
-    "branch": "15",
+    "branch": "17",
     "remote": "crdroid-gitlab"
   }
 ]
