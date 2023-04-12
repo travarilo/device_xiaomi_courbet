@@ -64,13 +64,12 @@ void set_ro_build_prop(const string &source, const string &prop,
     property_override(prop_name.c_str(), value.c_str());
 }
 
-void set_device_props(const string model, const string name, const string marketname, const string mod_device) {
+void set_device_props(const string name, const string marketname, const string mod_device) {
     // list of partitions to override props
     string source_partitions[] = { "", "odm.", "product.",
                                    "system.", "system_ext.", "vendor." };
 
     for (const string &source : source_partitions) {
-        set_ro_build_prop(source, "model", model);
         set_ro_build_prop(source, "name", name);
         set_ro_build_prop(source, "marketname", marketname);
     }
@@ -83,11 +82,11 @@ void vendor_load_properties()
     string region = GetProperty("ro.boot.hwc", "");
 
     if (region == "IN") { // India
-        set_device_props("M2101K9AI", "courbetin", "Mi 11 Lite 4G", "courbet_in_global");
+        set_device_props("courbetin", "Mi 11 Lite 4G", "courbet_in_global");
         property_override("bluetooth.device.default_name", "Mi 11 Lite 4G");
         property_override("vendor.usb.product_string", "Mi 11 Lite 4G");
     } else { // Global
-        set_device_props("M2101K9AG", "courbet", "Mi 11 Lite 4G", "courbet_global");
+        set_device_props("courbet", "Mi 11 Lite 4G", "courbet_global");
         property_override("bluetooth.device.default_name", "Mi 11 Lite 4G");
         property_override("vendor.usb.product_string", "Mi 11 Lite 4G");
     }
